@@ -14,4 +14,7 @@ class PlanMateriaMapping(Schema):
     
     @post_load
     def nuevo_plan_materia(self, data, **kwargs):
+        for key in ['dictado', 'anio', 'orden', 'se_cursa', 'se_rinde']:
+            if key in data:
+                data[key] = escape(data[key])
         return PlanMateria(**data)

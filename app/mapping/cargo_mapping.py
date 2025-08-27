@@ -11,4 +11,7 @@ class CargoMapping(Schema):
 
     @post_load
     def nuevo_cargo(self, data, **kwargs):
+        for key in ['nombre', 'puntos']:
+            if key in data:
+                data[key] = escape(data[key])
         return Cargo(**data)

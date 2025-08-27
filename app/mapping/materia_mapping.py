@@ -13,7 +13,6 @@ class MateriaMapping(Schema):
     
     @post_load
     def nueva_materia(self, data, **kwargs):
-        # Escapar solo los strings
         for key in ['nombre', 'diseno_curricular', 'horas_dictadas', 'nivel']:
             if key in data and isinstance(data[key], str):
                 data[key] = escape(data[key])

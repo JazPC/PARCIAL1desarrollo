@@ -7,4 +7,7 @@ class CategoriaCargoMapping(Schema):
     
     @post_load
     def nuevo_categoria_cargo(self, data, **kwargs):
+        for key in ['nombre']:
+            if key in data:
+                data[key] = escape(data[key])
         return CategoriaCargo(**data)

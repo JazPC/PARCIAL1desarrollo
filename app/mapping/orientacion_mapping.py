@@ -8,6 +8,9 @@ class OrientacionMapping(Schema):
 
     @post_load
     def nuevo_Orientacion(self, data, **kwargs):
+        for key in ['nombre']:
+            if key in data:
+                data[key] = escape(data[key])
         return Orientacion(**data)
     
  
