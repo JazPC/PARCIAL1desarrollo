@@ -1,0 +1,9 @@
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_RECORD_QUERIES = True
+TEST_DATABASE_URI='postgresql+psycopg2://usuario:clave@localhost:5433/TEST_SYSACAD'
+DEV_DATABASE_URI='postgresql+psycopg2://usuario:clave@localhost:5433/DEV_SYSACAD'
+PROD_DATABASE_URI='postgresql://usuario:clave@localhost:5432/PROD_SYSACAD'
+HASHIDS_MIN_LENGTH = '16'
+HASHIDS_ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+HASHIDS_SALT = 'Sistemas de gestion academica'
+SECRET_KEY = 'ClaveSecreta'
