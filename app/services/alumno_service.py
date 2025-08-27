@@ -43,6 +43,35 @@ class AlumnoService:
          context=context
       )
      
+     
+      
+    @staticmethod
+    def generar_ficha_alumno(id: int, tipo: str) -> BytesIO:
+      alumno = AlumnoRepository.buscar_alumno(id)
+      if not alumno:
+          return None
+      context=AlumnoService.__obtener_alumno(alumno)
+
+      documento = obtener_tipo_documento(tipo)
+      
+      if not documento:
+         return None
+      return documento.generar(
+         carpeta='certificados',
+         plantilla=f'certificado_{tipo}',
+         context=context
+      )
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
   @staticmethod
   def __obtener_fecha_actual():
     fecha_actual = datetime.datetime.now()

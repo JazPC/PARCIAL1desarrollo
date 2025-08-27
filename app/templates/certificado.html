@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .justificar{
+            text-align: justify;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha del Alumno: {{alumno.apellido}} {{alumno.nombre}}</title>
+</head>
+<body>
+    <p class="justificar">Apellido y nombre: {{alumno.apellido}}, {{alumno.nombre}}
+        {{alumno.tipoDocumento}}: {{alumno.nroDocumento}}
+        LEGAJO Nº: {{alumno.nroLegajo}}
+        Especialidad: {{especialidad.nombre}}
+        Facultad: {{facultad.nombre}}
+        Universidad: {{facultad.universidad.nombre}}
+        Ciudad: {{facultad.ciudad}}
+        Fecha de generación: {{fecha}}
+</p>
+</body>
+</html>
