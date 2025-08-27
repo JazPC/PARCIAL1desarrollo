@@ -50,6 +50,14 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(usuario_encontrado.nombredeusuario, usuario_guardado.nombredeusuario)
         self.assertEqual(usuario_encontrado.password, usuario_guardado.password)
         self.assertEqual(usuario_encontrado.actividad, usuario_guardado.actividad)
+        
+    def test_actualizar_usuario(self:
+        usuario = self.__crear_usuario()
+        UsuarioService.crear_usuario(usuario)
+        usuario.nombre = 'usuario actualizado'
+        usuario_actualizado = AreaService.actualizar_usuario(usuario.id, usuario)
+        self.assertIsNone(usuario_actualizado)
+        self.assertEqual(usuario_actualizado.nombre, 'usuario actualizado')
 
     def test_eliminar_usuario(self):
         usuario = self.__crear_usuario()
